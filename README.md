@@ -1,6 +1,6 @@
 # UNIX Assignment
 
-All files formatted as specified in the assignment description are in the directory called `final_files/`. Original data unaltered from when it were downloaded are in the directory `original_data`. All other files are some kind of intermediate file I used at some point.
+All files formatted as specified in the assignment description are in the directory called `final_files/`. Original data unaltered from when it were downloaded are in the directory `original_data`. All other files are some kind of intermediate file I used at some point. I suppose I could have moved them to their own directory to clean it up a bit, but I got lazy right after I produced the final files. Sorry.
 
 ## Data Inspection
 
