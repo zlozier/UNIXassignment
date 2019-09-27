@@ -1,10 +1,10 @@
-#UNIX Assignment
+# UNIX Assignment
 
 All files formatted as specified in the assignment description are in the directory called `final_files/`. Original data unaltered from when it were downloaded are in the directory `original_data`. All other files are some kind of intermediate file I used at some point.
 
-##Data Inspection
+## Data Inspection
 
-###Attributes of `fang_et_al_genotypes`
+### Attributes of `fang_et_al_genotypes`
 
 ```
 # displays the 'fang_et_al_genotypes.txt' file without wrapping the lines. This makes it more intuitive to visualize.
@@ -23,7 +23,7 @@ By inspecting this file I learned that:
 2. There are 986 columns in the file. After transposition, this translates to 986 rows. Considering the first 3 rows are headers, that means there are 983 SNP IDs in the file.
 3. Since there are 2783 lines in the file, there will be 2783 columns in the transposed file. The first line/column lists the SNP IDs, so there are 2782 data points per sample. This means there are 2,734,706 total SNP data points (not considering each data point represents 2 chromosomes since these are diploid organisms).
 
-###Attributes of `snp_position.txt`
+### Attributes of `snp_position.txt`
 
 ```
 # displays the 'snp_position.txt' file without wrapping the lines. This makes it more intuitive to visualize.
@@ -42,9 +42,9 @@ By inspecting this file I learned that:
 2. There are 984 lines in this file. After subtracting the header, there are 983 SNP IDs in this file which is equal to the number in the `fang_et_al_genotypes.txt` file.
 3. There are 15 columns in this file.
 
-##Data Processing
+## Data Processing
 
-###Maize Data
+### Maize Data
 
 ```
 awk '$3 ~ /Group|ZMMIL|ZMMLR|ZMMMR/ {print $0}' fang_et_al_genotypes.txt > maize_genotypes.txt
@@ -90,7 +90,7 @@ join -1 1 -2 1 snp_position_NH_c1c3c4.txt maize_genotypes_transposed_NH.txt > ma
 Adds chromosome number and position columns to the maize genotype data.
 
 
-###Teosinte Data
+### Teosinte Data
 
 ```
 awk '$3 ~ /Group|ZMPBA|ZMPIL|ZMPJA/ {print $0}' fang_et_al_genotypes.txt > teosinte_genotypes.txt
@@ -100,7 +100,7 @@ Isolates the records of samples belonging to the groups ZMMIL, ZMMLR, and ZMMMR 
 
 The remaining commands were very similar to the ones I used for the maize data, except I replaced maize with teosinte.
 
-###Maize and Teosinte Data
+### Maize and Teosinte Data
 
 ```
 for i in maize teosinte; do sed 's+?/?+?+g' ${i}_geontypes_snps_NH.txt > ${i}_genotypes_snps_NH_QM.txt
