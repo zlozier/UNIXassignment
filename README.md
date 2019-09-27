@@ -4,7 +4,7 @@ All files formatted as specified in the assignment description are in the direct
 
 ## Data Inspection
 
-### Attributes of `fang_et_al_genotypes`
+### Attributes of `fang_et_al_genotypes.txt`
 
 ```
 # displays the 'fang_et_al_genotypes.txt' file without wrapping the lines. This makes it more intuitive to visualize.
